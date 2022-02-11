@@ -164,7 +164,12 @@ Emacs配置文件的位置，会按照一下顺序去查找：
 
 ```lisp
 ;; 最简洁的格式
- (use-package restart-emacs)
+(setq use-package-always-ensure t) ;不用每个包都手动添加:ensure t关键字 
+(setq use-package-always-defer t) ;默认都是延迟加载，不用每个包都手动添加:defer t 
+(setq use-package-always-demand nil) 
+(setq use-package-expand-minimally t) 
+(setq use-package-verbose t)
+(use-package restart-emacs)
 
 ;; 常用的格式
  (use-package smooth-scrolling 
@@ -386,7 +391,9 @@ M-x benchmark-init/show-durations-tree` 或者 `M-x benchmark-init/show-duration
 
 **场景二：删除当前行**
 
-默认没有这样的快捷键，可以安装一个扩展来实现，`crux`，该扩展提供了包含该场景在内的一系列优化快捷命令。
+现在已经有了，C-a C-k
+
+也安装一个扩展来实现，`crux`，该扩展提供了包含该场景在内的一系列优化快捷命令。
 
 
 
@@ -451,8 +458,7 @@ M-%
         ivy-initial-inputs-alist nil 
         ivy-count-format "%d/%d " 
         enable-recursive-minibuffers t 
-        ivy-re-builders-alist '((t . ivy--regex-ignore-order))) 
-  (ivy-posframe-mode 1))) 
+        ivy-re-builders-alist '((t . ivy--regex-ignore-order)))) 
 
 (use-package counsel 
   :after (ivy) 
@@ -682,9 +688,32 @@ TODO
 
 拷贝选择一串字符然后拷贝
 
-
-
 tab键好像只能按一次
 
+Imenu
 
+iedit
 
+expand-region
+
+smartparens
+
+popwin
+
+helm-ag
+
+window-numbering
+
+evil
+
+powerline
+
+cask
+
+Counsel-git
+
+Projectile
+
+helm find files
+
+Hydra --- buffer使用
