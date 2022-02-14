@@ -129,3 +129,49 @@ C-x o
 
 
 
+‘find-tag’ is an obsolete command (as of 25.1); use ‘xref-find-definitions’ instead.
+
+xref-find-definitions (M-.)
+
+xref-find-references (M-?)
+
+
+
+## 基于tags的代码导航和补全
+
+https://zhuanlan.zhihu.com/p/125524093
+
+代码补全：company-ctags
+
+代码导航：counsel-etags
+
+其实忽略tags，company（complete any)
+
+Counsel 基于ivy实现的
+
+https://github.com/redguardtoo/counsel-etags#counsel-etags
+
+Please install `counsel-etags` from [MELPA](https://melpa.org/#/counsel-etags).
+
+If [Exuberant Ctags](http://ctags.sourceforge.net/) or [Universal Ctags](https://ctags.io/) exists, this program works out of box.
+
+Universal Ctags is actively maintained and strongly recommended.
+
+Or else, customize `counsel-etags-update-tags-backend` to create tags file with your own CLI. Please note [etags](https://www.gnu.org/software/emacs/manual/html_node/emacs/Create-Tags-Table.html#Create-Tags-Table) bundled with Emacs is not supported anymore.
+
+[It’s reported](https://github.com/redguardtoo/emacs.d/issues/697#issuecomment-394141015) “Exuberant Ctags” v5.8.5 is buggy.
+
+注意：[etags](https://www.gnu.org/software/emacs/manual/html_node/emacs/Create-Tags-Table.html#Create-Tags-Table) bundled with Emacs is not supported anymore.
+
+$ ctags --version
+ctags (GNU Emacs 27.2)
+
+这个ctags其实就是emacs下的etags，不被`counsel-etags`支持
+
+
+
+Q&A专区
+
+Q：Blocking call to accept-process-output with quit inhibited!
+
+A：这The example below runs the spell checker on a timer
