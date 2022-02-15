@@ -198,13 +198,6 @@ A：这The example below runs the spell checker on a timer
 
 
 
-Q: Company: An error occurred in auto-begin
-     Wrong type argument: hash-table-p, nil
-
-A: 工程刚开始没有载入完tags文件？稍后就好了
-
-
-
 Q: Company backend ’company-clang’ could not be initialized:
 Company found no clang executable
 
@@ -219,8 +212,17 @@ A: M-x customize-option 选择company-backends，去掉company-clang就可以了
 
 
 
+Q：
 
+1. company提示框没出来
 
+2. Company: An error occurred in auto-begin
 
+   Wrong type argument: hash-table-p, nil 
 
+A：在.emacs.d目录下有company-statistics-cache.el，删掉后就变得正常了
+
+https://github.com/syl20bnr/spacemacs/issues/7171
+
+猜测，company-statistics-cache.el空文件什么都没有，所以才一直报错的
 
