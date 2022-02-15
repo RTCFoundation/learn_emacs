@@ -172,6 +172,55 @@ ctags (GNU Emacs 27.2)
 
 Q&A专区
 
+Q：查看模式
+
+A: M-x describe-mode
+
+
+
+Q: 怎么支持搜索驼峰单词
+
+A: superword-mode
+
+
+
+Q：-_这些都是单词的分隔符
+
+A：elpa/evil-20220202.1351/evil.info给出了解释，采用了emacs的单词分词。
+
+(setq evil-symbol-word-search t)可以解决这个问题，同时也可以解决驼峰问题
+
+
+
 Q：Blocking call to accept-process-output with quit inhibited!
 
 A：这The example below runs the spell checker on a timer
+
+
+
+Q: Company: An error occurred in auto-begin
+     Wrong type argument: hash-table-p, nil
+
+A: 工程刚开始没有载入完tags文件？稍后就好了
+
+
+
+Q: Company backend ’company-clang’ could not be initialized:
+Company found no clang executable
+
+A: M-x customize-option 选择company-backends，去掉company-clang就可以了
+
+自动完成是由`company-mode`提供UI的。自动完成候选项由对应特定命令行工具的`backend`提供，见`company-backends`.
+我只用ctags。所以对应的`backend`是`company-ctags`. 它很稳定，如果没有你想要的候选项，可能是因为我把ctags扫描代码生成TAGS文件的时间间隔设置的比你预期的长。`counsel-etags-update-interval`的默认值是300秒。`company-ctags`定期载入的TAGS文件的时间间隔定义在`company-ctags-check-tags-file-interval`，默认是30秒。
+
+这样设置的目的是为了获得最佳编辑体验。减少内存和CPU消耗。对自动完成的实时性做了一点妥协。但我同时用`hippie-expand`和`eacl`两个插件做补充。
+
+如果你使用其他命令行工具特别是LSP系列的自动完成`backend`。实时性很高，语义分析更准确，内存和CPU消耗就差很多了。
+
+
+
+
+
+
+
+

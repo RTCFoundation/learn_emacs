@@ -119,10 +119,11 @@ https://github.com/redguardtoo/vscode-setup/blob/master/settings.json
 | 查看跳转表            | :jumps |
 | Goto Symbol           | ,kk    |
 | Go to Bracket         | %      |
+| matchitSelectItems    | ,si    |
 
 高级应用
 
-用vv，然后（,ss），然后就可以替换
+(,si)，然后（,ss），然后就可以替换
 
 ### 代码自动补全
 
