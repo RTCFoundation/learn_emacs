@@ -8,7 +8,7 @@
 | save file                 | C-x C-s  |
 | delete all but one window | C-x 1    |
 | delete current buffer     | C-x k    |
-| 窗口跳转                  | M-number |
+| 窗口跳转                  | Meta-number |
 | close current window      | C-x 0    |
 
 ## keyreq测量并优化工作流
