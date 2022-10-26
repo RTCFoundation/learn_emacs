@@ -225,4 +225,11 @@ A：在.emacs.d目录下有company-statistics-cache.el，删掉后就变得正�
 https://github.com/syl20bnr/spacemacs/issues/7171
 
 猜测，company-statistics-cache.el空文件什么都没有，所以才一直报错的
+ 
+Q:快速跳转到函数头和尾
+A:
+| 功能                      | 快捷键   |
+| ------------------------- | -------- |
+| c-beginning-of-defun      | C-M-a    |
+| c-end-of-defun            | C-M-e    |
 
