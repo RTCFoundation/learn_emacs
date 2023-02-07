@@ -74,7 +74,7 @@ indent-rigidly-left-to-tab-stop可以将代码取消缩进
 2. 单独提取到一个buffer中，（，ww)
 3. 在要替换的单词上，点击evilmr-replace-in-buffer，（，rb）
 4. 填写对应的单词，然后替换即可
-
+4. 恢复窗口(,ww)
 ## 多文件替换
 
 1. 选中单词或区域（v）
@@ -125,7 +125,7 @@ C-x o
 
 只剩下当前窗口：,x1
 
-恢复上次的窗口布局: uu
+恢复上次的窗口布局: ,uu
 
 
 
